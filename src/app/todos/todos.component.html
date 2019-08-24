@@ -1,0 +1,17 @@
+<h2>My Todos</h2>
+
+<div>
+  <label>Filtro:
+    <input #todoFilter />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="filter(todoFilter.value); todoFilter.value=''">
+    filtrar
+  </button>
+</div>
+
+<ul class="todos">
+  <li *ngFor="let todo of todos">
+    <span class="badge">{{todo.id}}</span> {{todo.title}}
+  </li>
+</ul>
